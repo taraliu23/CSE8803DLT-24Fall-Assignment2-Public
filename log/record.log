@@ -1,0 +1,40 @@
+10/13/2024 12:55:13 - INFO - src.args -   Configurations:
+{
+  "batch_size": 16,
+  "bert_model_name_or_path": "distilbert-base-uncased",
+  "bio_label_types": ["O", "B-PER", "I-PER", "B-LOC", "I-LOC", "B-ORG", "I-ORG", "B-MISC", "I-MISC"],
+  "data_dir": "./data",
+  "device": "cpu",
+  "entity_types": ["PER", "LOC", "ORG", "MISC"],
+  "gtid": "903944863",
+  "log_path": "log/record.log",
+  "lr": 5e-05,
+  "lr_scheduler_type": "linear",
+  "n_ents": 4,
+  "n_epochs": 20,
+  "n_lbs": 9,
+  "name": "Tingyu Liu",
+  "no_cuda": false,
+  "no_mps": false,
+  "seed": 42,
+  "warmup_ratio": 0.1,
+  "weight_decay": 0.01
+}
+10/13/2024 12:55:13 - INFO - __main__ -   name: Tingyu Liu
+10/13/2024 12:55:13 - INFO - __main__ -   GTID: 903944863
+10/13/2024 12:55:13 - INFO - __main__ -   Loading datasets...
+10/13/2024 12:55:13 - INFO - src.dataset.dataset -   Loading data file: data/train.json
+10/13/2024 12:55:13 - INFO - src.dataset.dataset -   Encoding sequences...
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Data loaded.
+10/13/2024 12:55:15 - INFO - __main__ -   Training dataset loaded, length=1000
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Loading data file: data/valid.json
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Encoding sequences...
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Data loaded.
+10/13/2024 12:55:15 - INFO - __main__ -   Validation dataset loaded, length=200
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Loading data file: data/test.json
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Encoding sequences...
+10/13/2024 12:55:15 - INFO - src.dataset.dataset -   Data loaded.
+10/13/2024 12:55:15 - INFO - __main__ -   Test dataset loaded, length=200
+10/13/2024 12:55:23 - INFO - src.train -   Start training...
+10/13/2024 12:55:23 - INFO - src.train -   
+10/13/2024 12:55:23 - INFO - src.train -   Epoch 1 of 20

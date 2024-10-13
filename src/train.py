@@ -29,7 +29,8 @@ class Trainer:
         self, config: Config, collate_fn=None, model=None, training_dataset=None, valid_dataset=None, test_dataset=None
     ):
         if not collate_fn:
-            tokenizer = AutoTokenizer.from_pretrained(config.bert_model_name_or_path)
+            tokenizer = AutoTokenizer.from_pretrained(
+                config.bert_model_name_or_path)
             collate_fn = DataCollator(tokenizer)
         self._config = config
         self._training_dataset = training_dataset
@@ -80,9 +81,12 @@ class Trainer:
         """
         Initialize learning rate scheduler
         """
-        num_update_steps_per_epoch = int(np.ceil(len(self._training_dataset) / self._config.batch_size))
-        num_warmup_steps = int(np.ceil(num_update_steps_per_epoch * self._config.warmup_ratio * self._config.n_epochs))
-        num_training_steps = int(np.ceil(num_update_steps_per_epoch * self._config.n_epochs))
+        num_update_steps_per_epoch = int(
+            np.ceil(len(self._training_dataset) / self._config.batch_size))
+        num_warmup_steps = int(np.ceil(
+            num_update_steps_per_epoch * self._config.warmup_ratio * self._config.n_epochs))
+        num_training_steps = int(
+            np.ceil(num_update_steps_per_epoch * self._config.n_epochs))
 
         self._scheduler = get_scheduler(
             self._config.lr_scheduler_type,
@@ -106,7 +110,8 @@ class Trainer:
             logger.info("")
             logger.info(f"Epoch {epoch_i + 1} of {self._config.n_epochs}")
 
-            training_dataloader = self.get_dataloader(self._training_dataset, shuffle=True)
+            training_dataloader = self.get_dataloader(
+                self._training_dataset, shuffle=True)
             train_loss = self.training_step(training_dataloader)
             logger.info(f"Training loss: {train_loss:.4f}")
 
@@ -138,9 +143,11 @@ class Trainer:
         for batch in tqdm(data_loader):
             batch.to(self._device)
 
-            outputs = self._model(input_ids=batch.input_ids, attention_mask=batch.attention_mask, labels=batch.labels)
+            outputs = self._model(
+                input_ids=batch.input_ids, attention_mask=batch.attention_mask, labels=batch.labels)
             loss = self.get_loss(outputs.logits, batch.labels)
-            assert torch.abs(loss - outputs.loss) < 1e-6, ValueError("Loss mismatch!")
+            assert torch.abs(
+                loss - outputs.loss) < 1e-6, ValueError("Loss mismatch!")
 
             # Do backpropagation and update the model parameters, and track the training loss.
             # `train_loss` is the summarized loss for all tokens involved in backpropagation.

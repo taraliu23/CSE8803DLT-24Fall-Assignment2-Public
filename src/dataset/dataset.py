@@ -72,12 +72,14 @@ class Dataset(torch.utils.data.Dataset):
         )
         self._partition = partition
 
-        file_path = os.path.normpath(os.path.join(config.data_dir, f"{partition}.json"))
+        file_path = os.path.normpath(os.path.join(
+            config.data_dir, f"{partition}.json"))
         logger.info(f"Loading data file: {file_path}")
         self._text, self._lbs = load_data_from_json(file_path)
 
         logger.info("Encoding sequences...")
-        self.encode(config.bert_model_name_or_path, {lb: idx for idx, lb in enumerate(config.bio_label_types)})
+        self.encode(config.bert_model_name_or_path, {
+                    lb: idx for idx, lb in enumerate(config.bio_label_types)})
 
         logger.info(f"Data loaded.")
 
@@ -103,8 +105,10 @@ class Dataset(torch.utils.data.Dataset):
         -------
         self
         """
-        tokenizer = AutoTokenizer.from_pretrained(tokenizer_name, add_prefix_space=True)
-        tokenized_text = tokenizer(self._text, add_special_tokens=True, is_split_into_words=True)
+        tokenizer = AutoTokenizer.from_pretrained(
+            tokenizer_name, add_prefix_space=True)
+        tokenized_text = tokenizer(
+            self._text, add_special_tokens=True, is_split_into_words=True)
 
         self._token_ids = tokenized_text.input_ids
         self._attn_masks = tokenized_text.attention_mask
@@ -117,6 +121,27 @@ class Dataset(torch.utils.data.Dataset):
         # You should store the updated label sequence in the `bert_lbs_list` variable.
         # --- TODO: start of your code ---
 
+        # iterate over each sentence
+        for i, sent_labels in enumerate(self._lbs):
+            word_ids = tokenized_text.word_ids(batch_index=i)
+            bert_labels = []
+            # detect subwords by tracking word_ids
+            previous_word_id = None
+
+            # iterate over each word in the sentence
+            for word_id in word_ids:
+                if word_id is None:
+                    # mask out [CLS], [SEP]
+                    bert_labels.append(MASKED_LB_ID)
+                elif word_id != previous_word_id:
+                    # keep label of the first subword token
+                    bert_labels.append(lb2idx[sent_labels[word_id]])
+                else:
+                    # mask out non-first subword tokens
+                    bert_labels.append(MASKED_LB_ID)
+                previous_word_id = word_id
+
+            bert_lbs_list.append(bert_labels)
         # --- TODO: end of your code ---
 
         for tks, lbs in zip(self._token_ids, bert_lbs_list):

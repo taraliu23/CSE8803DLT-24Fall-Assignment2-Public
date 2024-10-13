@@ -3,8 +3,8 @@
 # Quit if there are any errors
 set -e
 
-name=""
-gtid=""
+name="Tingyu Liu"
+gtid="903944863"
 
 data_dir="./data"
 
