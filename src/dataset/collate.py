@@ -21,33 +21,29 @@ class DataCollator(DataCollatorForTokenClassification):
         # Hint: some functions and variables you may want to use: `self.tokenizer.pad()`, `self.label_pad_token_id`.
         # --- TODO: start of your code ---
 
-        # We will use `self.tokenizer.pad()` to pad the token IDs and attention masks
-        # The `padding` argument ensures that we pad to the longest sequence in the batch
-
         batch = self.tokenizer.pad(
             {"input_ids": tk_ids, "attention_mask": attn_masks},
-            padding=True,              # Pads all sequences to the longest one
-            return_tensors="pt",       # Returns PyTorch tensors
+            padding=True,
+            return_tensors="pt",
         )
 
-        # Convert labels to tensors and pad them manually to the same length
-        # Get the max length from padded token IDs
         max_length = batch["input_ids"].shape[1]
         padded_labels = [
             lb + [self.label_pad_token_id] * (max_length - len(lb)) for lb in lbs
         ]
 
-        # Convert the padded labels to a tensor
         padded_labels = torch.tensor(padded_labels, dtype=torch.int64)
+        print(f"Max sequence length: {max_length}")
 
-        # print type of tk_ids
-        # print(type(tk_ids))
-        # convert tk_ids to tensor
-        tk_ids = torch.tensor(tk_ids, dtype=torch.int64)
-
-        # Update the variables
         tk_ids = batch["input_ids"]
+
+        tk_ids = torch.tensor(tk_ids, dtype=torch.int64)
+        print(f"Padded tk_ids: {tk_ids.size()}")
+
         attn_masks = batch["attention_mask"]
+        attn_masks = torch.tensor(attn_masks, dtype=torch.int64)
+        lbs = padded_labels
+        print(f"Padded labels: {padded_labels.size()}")
 
         # --- TODO: end of your code ---
 

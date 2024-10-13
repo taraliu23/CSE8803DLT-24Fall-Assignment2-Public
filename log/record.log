@@ -1,4 +1,4 @@
-10/13/2024 14:36:49 - INFO - src.args -   Configurations:
+10/13/2024 16:41:35 - INFO - src.args -   Configurations:
 {
   "batch_size": 16,
   "bert_model_name_or_path": "distilbert-base-uncased",
@@ -20,21 +20,228 @@
   "warmup_ratio": 0.1,
   "weight_decay": 0.01
 }
-10/13/2024 14:36:49 - INFO - __main__ -   name: Tingyu Liu
-10/13/2024 14:36:49 - INFO - __main__ -   GTID: 903944863
-10/13/2024 14:36:49 - INFO - __main__ -   Loading datasets...
-10/13/2024 14:36:49 - INFO - src.dataset.dataset -   Loading data file: data/train.json
-10/13/2024 14:36:49 - INFO - src.dataset.dataset -   Encoding sequences...
-10/13/2024 14:36:49 - INFO - src.dataset.dataset -   Data loaded.
-10/13/2024 14:36:49 - INFO - __main__ -   Training dataset loaded, length=1000
-10/13/2024 14:36:49 - INFO - src.dataset.dataset -   Loading data file: data/valid.json
-10/13/2024 14:36:49 - INFO - src.dataset.dataset -   Encoding sequences...
-10/13/2024 14:36:50 - INFO - src.dataset.dataset -   Data loaded.
-10/13/2024 14:36:50 - INFO - __main__ -   Validation dataset loaded, length=200
-10/13/2024 14:36:50 - INFO - src.dataset.dataset -   Loading data file: data/test.json
-10/13/2024 14:36:50 - INFO - src.dataset.dataset -   Encoding sequences...
-10/13/2024 14:36:50 - INFO - src.dataset.dataset -   Data loaded.
-10/13/2024 14:36:50 - INFO - __main__ -   Test dataset loaded, length=200
-10/13/2024 14:36:50 - INFO - src.train -   Start training...
-10/13/2024 14:36:50 - INFO - src.train -   
-10/13/2024 14:36:50 - INFO - src.train -   Epoch 1 of 20
+10/13/2024 16:41:35 - INFO - __main__ -   name: Tingyu Liu
+10/13/2024 16:41:35 - INFO - __main__ -   GTID: 903944863
+10/13/2024 16:41:35 - INFO - __main__ -   Loading datasets...
+10/13/2024 16:41:35 - INFO - src.dataset.dataset -   Loading data file: data/train.json
+10/13/2024 16:41:35 - INFO - src.dataset.dataset -   Encoding sequences...
+10/13/2024 16:41:35 - INFO - src.dataset.dataset -   Data loaded.
+10/13/2024 16:41:35 - INFO - __main__ -   Training dataset loaded, length=1000
+10/13/2024 16:41:35 - INFO - src.dataset.dataset -   Loading data file: data/valid.json
+10/13/2024 16:41:35 - INFO - src.dataset.dataset -   Encoding sequences...
+10/13/2024 16:41:36 - INFO - src.dataset.dataset -   Data loaded.
+10/13/2024 16:41:36 - INFO - __main__ -   Validation dataset loaded, length=200
+10/13/2024 16:41:36 - INFO - src.dataset.dataset -   Loading data file: data/test.json
+10/13/2024 16:41:36 - INFO - src.dataset.dataset -   Encoding sequences...
+10/13/2024 16:41:36 - INFO - src.dataset.dataset -   Data loaded.
+10/13/2024 16:41:36 - INFO - __main__ -   Test dataset loaded, length=200
+10/13/2024 16:41:36 - INFO - src.train -   Start training...
+10/13/2024 16:41:36 - INFO - src.train -   
+10/13/2024 16:41:36 - INFO - src.train -   Epoch 1 of 20
+10/13/2024 16:42:44 - INFO - src.train -   Training loss: 0.0643
+10/13/2024 16:42:47 - INFO - src.train -   Validation results:
+10/13/2024 16:42:47 - INFO - src.train -     precision: 0.5000.
+10/13/2024 16:42:47 - INFO - src.train -     recall: 0.0166.
+10/13/2024 16:42:47 - INFO - src.train -     f1: 0.0321.
+10/13/2024 16:42:47 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:42:47 - INFO - src.train -   
+10/13/2024 16:42:47 - INFO - src.train -   Epoch 2 of 20
+10/13/2024 16:43:54 - INFO - src.train -   Training loss: 0.0171
+10/13/2024 16:43:57 - INFO - src.train -   Validation results:
+10/13/2024 16:43:57 - INFO - src.train -     precision: 0.7517.
+10/13/2024 16:43:57 - INFO - src.train -     recall: 0.7962.
+10/13/2024 16:43:57 - INFO - src.train -     f1: 0.7733.
+10/13/2024 16:43:57 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:43:57 - INFO - src.train -   
+10/13/2024 16:43:57 - INFO - src.train -   Epoch 3 of 20
+10/13/2024 16:45:02 - INFO - src.train -   Training loss: 0.0054
+10/13/2024 16:45:05 - INFO - src.train -   Validation results:
+10/13/2024 16:45:05 - INFO - src.train -     precision: 0.8356.
+10/13/2024 16:45:05 - INFO - src.train -     recall: 0.8673.
+10/13/2024 16:45:05 - INFO - src.train -     f1: 0.8512.
+10/13/2024 16:45:05 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:45:05 - INFO - src.train -   
+10/13/2024 16:45:05 - INFO - src.train -   Epoch 4 of 20
+10/13/2024 16:46:08 - INFO - src.train -   Training loss: 0.0025
+10/13/2024 16:46:11 - INFO - src.train -   Validation results:
+10/13/2024 16:46:11 - INFO - src.train -     precision: 0.8578.
+10/13/2024 16:46:11 - INFO - src.train -     recall: 0.8720.
+10/13/2024 16:46:11 - INFO - src.train -     f1: 0.8649.
+10/13/2024 16:46:11 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:46:11 - INFO - src.train -   
+10/13/2024 16:46:11 - INFO - src.train -   Epoch 5 of 20
+10/13/2024 16:47:18 - INFO - src.train -   Training loss: 0.0013
+10/13/2024 16:47:21 - INFO - src.train -   Validation results:
+10/13/2024 16:47:21 - INFO - src.train -     precision: 0.8791.
+10/13/2024 16:47:21 - INFO - src.train -     recall: 0.8957.
+10/13/2024 16:47:21 - INFO - src.train -     f1: 0.8873.
+10/13/2024 16:47:21 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:47:21 - INFO - src.train -   
+10/13/2024 16:47:21 - INFO - src.train -   Epoch 6 of 20
+10/13/2024 16:48:26 - INFO - src.train -   Training loss: 0.0008
+10/13/2024 16:48:29 - INFO - src.train -   Validation results:
+10/13/2024 16:48:29 - INFO - src.train -     precision: 0.8897.
+10/13/2024 16:48:29 - INFO - src.train -     recall: 0.8981.
+10/13/2024 16:48:29 - INFO - src.train -     f1: 0.8939.
+10/13/2024 16:48:30 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:48:30 - INFO - src.train -   
+10/13/2024 16:48:30 - INFO - src.train -   Epoch 7 of 20
+10/13/2024 16:49:35 - INFO - src.train -   Training loss: 0.0006
+10/13/2024 16:49:38 - INFO - src.train -   Validation results:
+10/13/2024 16:49:38 - INFO - src.train -     precision: 0.8601.
+10/13/2024 16:49:38 - INFO - src.train -     recall: 0.8886.
+10/13/2024 16:49:38 - INFO - src.train -     f1: 0.8741.
+10/13/2024 16:49:38 - INFO - src.train -   
+10/13/2024 16:49:38 - INFO - src.train -   Epoch 8 of 20
+10/13/2024 16:50:45 - INFO - src.train -   Training loss: 0.0004
+10/13/2024 16:50:48 - INFO - src.train -   Validation results:
+10/13/2024 16:50:48 - INFO - src.train -     precision: 0.8811.
+10/13/2024 16:50:48 - INFO - src.train -     recall: 0.8957.
+10/13/2024 16:50:48 - INFO - src.train -     f1: 0.8884.
+10/13/2024 16:50:48 - INFO - src.train -   
+10/13/2024 16:50:48 - INFO - src.train -   Epoch 9 of 20
+10/13/2024 16:52:00 - INFO - src.train -   Training loss: 0.0003
+10/13/2024 16:52:04 - INFO - src.train -   Validation results:
+10/13/2024 16:52:04 - INFO - src.train -     precision: 0.8847.
+10/13/2024 16:52:04 - INFO - src.train -     recall: 0.8910.
+10/13/2024 16:52:04 - INFO - src.train -     f1: 0.8878.
+10/13/2024 16:52:04 - INFO - src.train -   
+10/13/2024 16:52:04 - INFO - src.train -   Epoch 10 of 20
+10/13/2024 16:53:15 - INFO - src.train -   Training loss: 0.0003
+10/13/2024 16:53:18 - INFO - src.train -   Validation results:
+10/13/2024 16:53:18 - INFO - src.train -     precision: 0.8733.
+10/13/2024 16:53:18 - INFO - src.train -     recall: 0.8981.
+10/13/2024 16:53:18 - INFO - src.train -     f1: 0.8855.
+10/13/2024 16:53:18 - INFO - src.train -   
+10/13/2024 16:53:18 - INFO - src.train -   Epoch 11 of 20
+10/13/2024 16:54:22 - INFO - src.train -   Training loss: 0.0003
+10/13/2024 16:54:25 - INFO - src.train -   Validation results:
+10/13/2024 16:54:25 - INFO - src.train -     precision: 0.8879.
+10/13/2024 16:54:25 - INFO - src.train -     recall: 0.9005.
+10/13/2024 16:54:25 - INFO - src.train -     f1: 0.8941.
+10/13/2024 16:54:25 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:54:25 - INFO - src.train -   
+10/13/2024 16:54:25 - INFO - src.train -   Epoch 12 of 20
+10/13/2024 16:55:29 - INFO - src.train -   Training loss: 0.0002
+10/13/2024 16:55:32 - INFO - src.train -   Validation results:
+10/13/2024 16:55:32 - INFO - src.train -     precision: 0.8986.
+10/13/2024 16:55:32 - INFO - src.train -     recall: 0.9028.
+10/13/2024 16:55:32 - INFO - src.train -     f1: 0.9007.
+10/13/2024 16:55:32 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:55:32 - INFO - src.train -   
+10/13/2024 16:55:32 - INFO - src.train -   Epoch 13 of 20
+10/13/2024 16:56:35 - INFO - src.train -   Training loss: 0.0002
+10/13/2024 16:56:38 - INFO - src.train -   Validation results:
+10/13/2024 16:56:38 - INFO - src.train -     precision: 0.8719.
+10/13/2024 16:56:38 - INFO - src.train -     recall: 0.9028.
+10/13/2024 16:56:38 - INFO - src.train -     f1: 0.8871.
+10/13/2024 16:56:38 - INFO - src.train -   
+10/13/2024 16:56:38 - INFO - src.train -   Epoch 14 of 20
+10/13/2024 16:57:41 - INFO - src.train -   Training loss: 0.0002
+10/13/2024 16:57:44 - INFO - src.train -   Validation results:
+10/13/2024 16:57:44 - INFO - src.train -     precision: 0.8949.
+10/13/2024 16:57:44 - INFO - src.train -     recall: 0.9076.
+10/13/2024 16:57:44 - INFO - src.train -     f1: 0.9012.
+10/13/2024 16:57:44 - INFO - src.train -   Model buffer is updated!
+10/13/2024 16:57:44 - INFO - src.train -   
+10/13/2024 16:57:44 - INFO - src.train -   Epoch 15 of 20
+10/13/2024 16:58:52 - INFO - src.train -   Training loss: 0.0001
+10/13/2024 16:58:55 - INFO - src.train -   Validation results:
+10/13/2024 16:58:55 - INFO - src.train -     precision: 0.8897.
+10/13/2024 16:58:55 - INFO - src.train -     recall: 0.8981.
+10/13/2024 16:58:55 - INFO - src.train -     f1: 0.8939.
+10/13/2024 16:58:55 - INFO - src.train -   
+10/13/2024 16:58:55 - INFO - src.train -   Epoch 16 of 20
+10/13/2024 17:00:01 - INFO - src.train -   Training loss: 0.0001
+10/13/2024 17:00:04 - INFO - src.train -   Validation results:
+10/13/2024 17:00:04 - INFO - src.train -     precision: 0.8688.
+10/13/2024 17:00:04 - INFO - src.train -     recall: 0.9100.
+10/13/2024 17:00:04 - INFO - src.train -     f1: 0.8889.
+10/13/2024 17:00:04 - INFO - src.train -   
+10/13/2024 17:00:04 - INFO - src.train -   Epoch 17 of 20
+10/13/2024 17:01:08 - INFO - src.train -   Training loss: 0.0001
+10/13/2024 17:01:11 - INFO - src.train -   Validation results:
+10/13/2024 17:01:11 - INFO - src.train -     precision: 0.8944.
+10/13/2024 17:01:11 - INFO - src.train -     recall: 0.9028.
+10/13/2024 17:01:11 - INFO - src.train -     f1: 0.8986.
+10/13/2024 17:01:11 - INFO - src.train -   
+10/13/2024 17:01:11 - INFO - src.train -   Epoch 18 of 20
+10/13/2024 17:02:20 - INFO - src.train -   Training loss: 0.0001
+10/13/2024 17:02:24 - INFO - src.train -   Validation results:
+10/13/2024 17:02:24 - INFO - src.train -     precision: 0.8920.
+10/13/2024 17:02:24 - INFO - src.train -     recall: 0.9005.
+10/13/2024 17:02:24 - INFO - src.train -     f1: 0.8962.
+10/13/2024 17:02:24 - INFO - src.train -   
+10/13/2024 17:02:24 - INFO - src.train -   Epoch 19 of 20
+10/13/2024 17:03:30 - INFO - src.train -   Training loss: 0.0001
+10/13/2024 17:03:32 - INFO - src.train -   Validation results:
+10/13/2024 17:03:32 - INFO - src.train -     precision: 0.8879.
+10/13/2024 17:03:32 - INFO - src.train -     recall: 0.9005.
+10/13/2024 17:03:32 - INFO - src.train -     f1: 0.8941.
+10/13/2024 17:03:32 - INFO - src.train -   
+10/13/2024 17:03:32 - INFO - src.train -   Epoch 20 of 20
+10/13/2024 17:04:35 - INFO - src.train -   Training loss: 0.0001
+10/13/2024 17:04:37 - INFO - src.train -   Validation results:
+10/13/2024 17:04:37 - INFO - src.train -     precision: 0.8879.
+10/13/2024 17:04:37 - INFO - src.train -     recall: 0.9005.
+10/13/2024 17:04:37 - INFO - src.train -     f1: 0.8941.
+10/13/2024 17:04:40 - INFO - src.train -   
+10/13/2024 17:04:40 - INFO - src.train -   Best validation result:
+10/13/2024 17:04:40 - INFO - src.train -   [LOC]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.9214.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.9416.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.9314.
+10/13/2024 17:04:40 - INFO - src.train -   [MISC]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.7424.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.8305.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.7840.
+10/13/2024 17:04:40 - INFO - src.train -   [ORG]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.8352.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.8172.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.8261.
+10/13/2024 17:04:40 - INFO - src.train -   [PER]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.9847.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.9699.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.9773.
+10/13/2024 17:04:40 - INFO - src.train -   [micro avg]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.8949.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.9076.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.9012.
+10/13/2024 17:04:40 - INFO - src.train -   [macro avg]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.8709.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.8898.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.8797.
+10/13/2024 17:04:40 - INFO - src.train -   [weighted avg]
+10/13/2024 17:04:40 - INFO - src.train -     precision: 0.8973.
+10/13/2024 17:04:40 - INFO - src.train -     recall: 0.9076.
+10/13/2024 17:04:40 - INFO - src.train -     f1: 0.9020.
+10/13/2024 17:04:43 - INFO - src.train -   
+10/13/2024 17:04:43 - INFO - src.train -   Test results:
+10/13/2024 17:04:43 - INFO - src.train -   [LOC]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.9060.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.9217.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.9138.
+10/13/2024 17:04:43 - INFO - src.train -   [MISC]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.8235.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.8077.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.8155.
+10/13/2024 17:04:43 - INFO - src.train -   [ORG]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.7835.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.7677.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.7755.
+10/13/2024 17:04:43 - INFO - src.train -   [PER]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.9333.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.9396.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.9365.
+10/13/2024 17:04:43 - INFO - src.train -   [micro avg]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.8771.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.8771.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.8771.
+10/13/2024 17:04:43 - INFO - src.train -   [macro avg]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.8616.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.8592.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.8603.
+10/13/2024 17:04:43 - INFO - src.train -   [weighted avg]
+10/13/2024 17:04:43 - INFO - src.train -     precision: 0.8763.
+10/13/2024 17:04:43 - INFO - src.train -     recall: 0.8771.
+10/13/2024 17:04:43 - INFO - src.train -     f1: 0.8766.
