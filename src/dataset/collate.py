@@ -40,6 +40,15 @@ class DataCollator(DataCollatorForTokenClassification):
         # Convert the padded labels to a tensor
         padded_labels = torch.tensor(padded_labels, dtype=torch.int64)
 
+        # print type of tk_ids
+        # print(type(tk_ids))
+        # convert tk_ids to tensor
+        tk_ids = torch.tensor(tk_ids, dtype=torch.int64)
+
+        # Update the variables
+        tk_ids = batch["input_ids"]
+        attn_masks = batch["attention_mask"]
+
         # --- TODO: end of your code ---
 
         return Batch(input_ids=tk_ids, attention_mask=attn_masks, labels=lbs)
