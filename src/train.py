@@ -153,6 +153,19 @@ class Trainer:
             # `train_loss` is the summarized loss for all tokens involved in backpropagation.
             # --- TODO: start of your code ---
 
+            # Backpropagation: Compute gradients
+            loss.backward()
+
+            # Update model weights
+            self._optimizer.step()
+            self._scheduler.step()  # Update the learning rate
+            self._optimizer.zero_grad()  # Reset gradients after the step
+
+            # Track the total loss and number of tokens
+            train_loss += loss.item() * batch.input_ids.size(0)  # Accumulate loss
+            # Count total tokens (not padded tokens)
+            n_tks += torch.sum(batch.attention_mask).item()
+
             # --- TODO: end of your code ---
 
         return train_loss / n_tks
@@ -176,6 +189,20 @@ class Trainer:
         # Compute the loss for the batch of data.
         # Your result should match the result from `outputs.loss`.
         # --- TODO: start of your code ---
+
+        # Flatten the logits and labels so that they match in shape
+        # Only consider tokens that are not masked (-100)
+        active_loss = lbs.view(-1) != MASKED_LB_ID
+        active_logits = logits.view(-1, self._config.n_lbs)  # Flatten logits
+        active_labels = torch.where(
+            active_loss, lbs.view(-1), torch.tensor(
+                self._loss.ignore_index).type_as(lbs)
+        )  # Set masked labels to ignore index
+
+        # Calculate the loss using CrossEntropyLoss
+        loss = self._loss(active_logits, active_labels)
+
+        return loss
 
         # --- TODO: end of your code ---
 
@@ -204,6 +231,35 @@ class Trainer:
         # TODO: Predicted labels for each sample in the dataset and stored in `pred_lbs`, a list of list of strings.
         # TODO: The string elements represent the enitity labels, such as "O" or "B-PER".
         # --- TODO: start of your code ---
+
+        # Disable gradient computation for evaluation
+        with torch.no_grad():
+            for batch in tqdm(data_loader):
+                # Move batch to the appropriate device (CPU/GPU)
+                batch.to(self._device)
+
+                # Forward pass: Get model predictions (logits)
+                outputs = self._model(
+                    input_ids=batch.input_ids, attention_mask=batch.attention_mask
+                )
+
+                # Extract logits and convert to predicted indices (token-level predictions)
+                logits = outputs.logits
+                # Get the index of the highest logit for each token
+                preds = torch.argmax(logits, dim=-1)
+
+                # Convert predicted indices to NER labels (e.g., "O", "B-PER")
+                for i in range(preds.size(0)):  # Loop through each sentence in the batch
+                    pred_labels = []
+                    # Loop through each token in the sentence
+                    for j in range(preds.size(1)):
+                        # Only consider non-padding tokens
+                        if batch.attention_mask[i, j] == 1:
+                            # Convert index to label
+                            pred_labels.append(
+                                self._config.idx2label[preds[i, j].item()])
+                    # Append predicted labels for this sentence
+                    pred_lbs.append(pred_labels)
 
         # --- TODO: end of your code ---
 
